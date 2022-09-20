@@ -11,23 +11,25 @@
 // Define an enum for monster type
 
 enum MonsterType {
-	
+	lizard,
+	flying,
+	ape
 }
 
 // Add the types here and use the enum for type. 
 
-function rampage(name, type, power, city) {
+function rampage(name: string, type: MonsterType, power: number, city:string):string {
 	let action: string
 	switch(type) {
-		case 'ape': 
+		case MonsterType.lizard: 
 			action = 'smash'
 			break
 
-		case 'lizard':
+		case MonsterType.flying:
 			action = 'burn'
 			break
 
-		case 'flying': 
+		case MonsterType.ape: 
 			action = 'flap'	
 			break
 	} 
@@ -37,6 +39,6 @@ function rampage(name, type, power, city) {
 
 // Use the enum here when calling the rampage function
 
-console.log(rampage('Gojira', 'lizard', 90, 'tokyo'))
-console.log(rampage('Mothra', 'flying', 40, 'Fresno'))
-console.log(rampage('Kong', 'ape', 88, 'New York'))
+console.log(rampage('Gojira', MonsterType.lizard, 90, 'tokyo'))
+console.log(rampage('Mothra', MonsterType.flying, 40, 'Fresno'))
+console.log(rampage('Kong', MonsterType.ape, 88, 'New York'))
